@@ -1,3 +1,4 @@
+
 node {
 
 stage('Clone Repository')
@@ -15,9 +16,10 @@ sh "docker build -t vivtest:latest ."
 }
 
 stage('Docker login to hub and push the image'){
+
 sh "docker login -u 'vmungai' -p 'CIra123!' "
-sh "docker tag vivtest:latest vmungai/devrev:latest"
-sh "docker push vmungai/devrev:latest"
+sh "docker tag vivtest:latest vmungai/vivexam:latest"
+sh "docker push vmungai/vivexam:latest"
 }
 
 stage('Apply changes to the environment') {
